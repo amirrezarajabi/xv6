@@ -89,3 +89,10 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// retuen number of proccesses
+int
+sys_getProcCount(void)
+{
+  return getProcCount();
+}

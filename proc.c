@@ -532,3 +532,16 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+int
+getProcCount(void)
+{
+  int i = 0;
+  struct proc *p;
+
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    if(p->state != UNUSED)
+      i++;
+  }
+  return i; 
+}
