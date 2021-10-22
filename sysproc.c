@@ -7,6 +7,8 @@
 #include "mmu.h"
 #include "proc.h"
 
+extern int readCount;
+
 int
 sys_fork(void)
 {
@@ -95,4 +97,11 @@ int
 sys_getProcCount(void)
 {
   return getProcCount();
+}
+
+// retuen number of read syscall was called
+int
+sys_getReadCount(void)
+{
+  return getReadCount(readCount);
 }

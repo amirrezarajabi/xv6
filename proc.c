@@ -545,3 +545,9 @@ getProcCount(void)
   }
   return i; 
 }
+
+int
+getReadCount(int rC)
+{
+  return rC;
+}
