@@ -105,3 +105,17 @@ sys_getReadCount(void)
 {
   return getReadCount(readCount);
 }
+
+int 
+sys_thread_create(void){
+  void* f;
+  if(argptr(0,(void*)&f,sizeof(*f))<0){
+    return -1;
+  }
+  return thread_create(f);
+}
+
+int 
+sys_thread_wait(void){
+  return thread_wait();
+}
